@@ -1,5 +1,27 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 01: Intro to Python
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Pre-work
+    - Things you need to know
+        - Canvas, GitHub, YouTube
+        - Ambiguity
+    
+- Soft kick-off & Intros (Official Kick-off at 1p)
+    - Course Overview
+    - Tooling:
+        - Python 3.6
+        - VS Code (or whatever editor you want)
+        - Terminal
+        - Virtual Environments
+    
+- PipEnv (virtual envs)
+    - Config files
+- Writing CLIs in Python
+- Lab Preview
+    - 3-steps... Make it work. Make it pretty. Make it fast.
+
 ## Learning Objectives
 
 - Students will have a version of Python 3.6 or higher on their computers
@@ -7,8 +29,7 @@
 - Students will be able to set up virtual environments for isolating their packages from their system Python
 - Students will learn how to write Python files and run them from the command line
 - Students will learn how to write scripts that can take user input and return conditional responses
-- Students will understand the measurements of space and time complexity in algorithms using Big-O notation
-- Students will be introduced to a daily whiteboarding practice, and will use this process for the duration of the course
+
 
 ## Outline
 - Kick-off and Introductions
