@@ -2,8 +2,8 @@
 =====================================
 > Advanced Software Development
 
-[![Canvas](https://img.shields.io/badge/canvas-401d10-blue.svg)]()
-[![Slack](https://img.shields.io/badge/slack-401d10-orange.svg)]()
+[![Canvas](https://img.shields.io/badge/canvas-401d10-blue.svg)](https://canvas.instructure.com/courses/1473889)
+[![Slack](https://img.shields.io/badge/slack-401d10-orange.svg)](https://codefellows.slack.com/messages/GE91JA5QE)
 
 
 # Welcome

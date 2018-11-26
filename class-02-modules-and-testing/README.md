@@ -1,13 +1,23 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 02: Modules and Testing
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+
+- Code Review (every day, but not today...)
+- Data structures & Code challenges   
+    - Challenge 01 Example
+- Testing in Python & Test Driven Development
+- Python Modules & Packages
+- Lab Preview
+
 ## Learning Objectives
 
-- Students will learn what a Python module is
 - Students will understand what differentiates a module from a package
 - Students will have an idea of how to import modules/packages
-- Students will be introduced to how Python uses namespaces
-- Students will use learn about methods on Python's basic containers
 - Students will be introduced to testing and one method of how it can work in Python
+- Students will understand the measurements of space and time complexity in algorithms using Big-O notation
+- Students will be introduced to a daily whiteboarding practice, and will use this process for the duration of the course
 
 ## Outline
 
