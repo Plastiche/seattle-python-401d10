@@ -4,7 +4,7 @@
 - Notes:
     - Anything top of mind?
 
-- Code Review (every day, but not today...)
+- Code Review
 - Data structures & Code challenges   
     - Challenge 01 Example
 - Testing in Python & Test Driven Development
