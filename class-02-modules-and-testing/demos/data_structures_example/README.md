@@ -2,9 +2,9 @@
 
 ## Structure
 
-The `00-data-structures` folder structure should mimic what your Data_Structures_And_Algorithms repository should look like.
+The `data-structures` folder structure should mimic what your Data_Structures_And_Algorithms repository should look like.
 
-The structure should be as follows (please note that your `data-structures-and-algorithms` will be a repo, and not a folder):
+The structure should be as follows (please note that your `data-structures-and-algorithms` will be a repo):
 
 ```sh
 data_structures_and_algorithms # (repo name)
