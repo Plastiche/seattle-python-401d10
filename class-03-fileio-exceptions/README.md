@@ -1,5 +1,19 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 03: File IO and Exceptions
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Lecture formats for JB/Scott
+
+- Code Review
+- Python Exception Handling
+    - Try/Except/Finally
+- File I/O
+    - Read/Write
+    - Encodings
+    - MemoryView & Struct
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will learn about how Python throws and displays errors
