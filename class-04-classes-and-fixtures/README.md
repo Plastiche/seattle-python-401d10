@@ -1,5 +1,16 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 04: Classes and Fixtures
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review
+- Python OOP
+- Python Classes
+- Testing with PyTest Fixtures
+- Lab Preview
+    - Working with Binary
+
 ## Learning Objectives
 
 - Students will finally encounter the Python class, and begin working with basic OOP Principles
