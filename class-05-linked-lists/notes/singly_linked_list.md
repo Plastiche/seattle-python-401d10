@@ -45,8 +45,8 @@ Let's put a use case on our traversal. We want to `Find` the first node that con
 The Python code for a `find_node` is as so:
 ```python
 def find_node(self, val):
-"""Linked List method which returns the first matching node, else None
-"""
+    """Linked List method which returns the first matching node, else None
+    """
     current = self.head
 
     while current.next is not None:

@@ -47,7 +47,7 @@ _You can skip some of these steps if you already have the instances created._
 1. Update `apt-get`.
 
     ```bash
-    $ sudo apt-get update && sudo apt-get upgrade -y
+    $ sudo apt-get update
     ```
 
 1. Install necessary packages from `apt-get`.
