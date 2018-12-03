@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 06: Sockets & TCP
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review
+- TCP Protocol
+- Socket Programming
+    - Processes & Threads in Python
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will learn about the TCP/IP stack and the layers of activity it represents
