@@ -3,10 +3,24 @@ from .linked_list import LinkedList
 def test_exists():
     assert LinkedList
 
-def test_head_create():
+def test_create():
     ll = LinkedList()
-    print(ll)
-    assert ll
+    assert isinstance(ll, LinkedList)
+    # note can't just assert(ll) because
+    # it's falsy by default once __len__ added
+
+def test_len():
+    ll = LinkedList()
+    assert len(ll) == 0
+
+def test_str():
+    ll = LinkedList()
+    assert str(ll) == 'Linked List with 0 nodes'
+
+def test_repr():
+    ll = LinkedList()
+    assert repr(ll) == '<LinkedList> size:0'
+
 
 def test_head_none():
     ll = LinkedList()
@@ -50,5 +64,5 @@ def test_includes_when_empty():
     assert ll.includes('apples') is False
 
 # def test_size():
-#    ll = LinkedList() 
+#    ll = LinkedList()
 #    assert len(ll) == 1
