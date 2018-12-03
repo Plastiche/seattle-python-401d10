@@ -1,6 +1,7 @@
 from client import Client
 import threading
 import socket
+import sys
 
 
 PORT = 9876
@@ -22,6 +23,7 @@ class ChatServer(threading.Thread):
             self.server.bind((self.host, self.port))
         except socket.error:
             print(f'Bind failed. { socket.error }')
+            sys.exit()
 
         self.server.listen(10)
 
@@ -63,4 +65,5 @@ if __name__ == '__main__':
     try:
         server.run()
     except KeyboardInterrupt:
-        pass
+        [c.conn.close() for c in server.client_pool if len(server.client_pool)]
+        sys.exit()
