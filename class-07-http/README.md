@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 07: Protocols & HTTP
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review
+- How the web works
+    - URLs, Request/Response, client/server, etc
+- HTTP Server & Testing
+- Lab preview
+
 ## Learning Objectives
 
 - Students will understand all of the parts and pieces of a URL
