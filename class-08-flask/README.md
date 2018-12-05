@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 08: Flask Web Framework
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - What's coming up...
+    
+- Code Review
+- Introduction to Frameworks
+- Flask
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will understand the difference between a library and a web framework
