@@ -1,8 +1,8 @@
-# Deploy a Pyramid Application to AWS
+# Deploy a Flask Application to AWS
 
-### In your Pyramid project
+### In your project
 
-1. Ensure your `setup.py` reflects any additional dependencies installed via `pipenv` for local development
+1. Ensure your `requirements.txt` reflects any additional dependencies installed via `pipenv` for local development
 
 ### On AWS
 _You can skip some of these steps if you already have the instances created._
@@ -10,7 +10,8 @@ _You can skip some of these steps if you already have the instances created._
 1. Create a new EC2 instance.
      - Choose the Ubuntu Server 16.04 from the free tier
      - Continue to the the security group settings
-     - Use a security group with access to SSH and HTTP
+     - Use a security group with access to SSH, HTTP, and POSTGRESQL 
+        - For now, allow access from anywhere
      - When launching, create a new key pair and download it
      - Launch the instance
 
@@ -32,7 +33,7 @@ _You can skip some of these steps if you already have the instances created._
             IdentityFile ~/.ssh/(key name).pem
         ```
 
-### In your Pyramid project
+### In your project
 
 1. Connect to your EC2 instance.
 
@@ -53,25 +54,40 @@ _You can skip some of these steps if you already have the instances created._
 1. Install necessary packages from `apt-get`.
 
     ```bash
-    $ sudo apt-get install nginx build-essential python-dev python3-pip -y
+    $ sudo apt-get install nginx build-essential python3-pip -y
     ```
 
-13. Clone Pyramid project repo onto the instance.
-
+13. Clone project repo onto the instance.
     ```bash
     $ cd ~
     $ git clone (link to repo).git src
     ```
-
-14. Install pip requirements for Pyramid project.
-
+    
+14. Install pip requirements for project.
     ```bash
     $ cd src
-    $ pip3 install -e . --user
+    $ pip3 install -r requirements.txt
     ```
 
     **DO NOT USE SUDO TO PIP INSTALL.**
+    
+#### Nginx Restart Fix
+1. _NOTE: The following steps are a fix which allow us to successfully restart Nginx on the instance after updating the configuration files. Without this fix, a full reboot of the instance is required to successfully restart Nginx._
+```bash
+sudo mkdir /etc/systemd/system/nginx.service.d
+sudo nano /etc/systemd/system/nginx.service.d/override.conf
+```
+Then add the following line to that file. Save and close.
+```
+[Service]
+ExecStartPost=/bin/sleep 0.1
+```
+Then run:
+```bash
+sudo systemctl daemon-reload
+```
 
+### Configure Nginx
 17. Replace the default `nginx` configuration file.
 
     ```bash
@@ -177,23 +193,21 @@ _You can skip some of these steps if you already have the instances created._
     $
     ```
 
-    **RESTART THE EC2 INSTANCE FROM YOUR AWS CONSOLE.**
-
 1. Check that `nginx` is working properly.
     ```bash
-    $ sudo service nginx status
+    $ sudo systemctl status nginx
     ```
 
      - If `nginx` is failing:
         ```bash
-        $ sudo service nginx restart
+        $ sudo systemctl restart nginx 
         ```
 
         You can also check the error logs at `/var/log/nginx/error.log`.
 
 1. Install `gunicorn` with `pip3`.
     ```bash
-    $ pip3 install gunicorn --user
+    $ sudo pip3 install gunicorn python-dotenv
     ```
 
 1. Create a `gunicorn` configuration file.
@@ -210,8 +224,9 @@ _You can skip some of these steps if you already have the instances created._
     [Service]
     User=ubuntu
     Group=www-data
+    EnvironmentFile=/home/ubuntu/src/.env
     WorkingDirectory=/home/ubuntu/src
-    ExecStart=/home/ubuntu/.local/bin/gunicorn --access-logfile - -w 3 --paste production.ini
+    ExecStart=/home/ubuntu/.local/bin/gunicorn --access-logfile - -w 3 wsgi:app
 
     [Install]
     WantedBy=multi-user.target
@@ -225,5 +240,18 @@ _You can skip some of these steps if you already have the instances created._
     $ sudo systemctl status gunicorn
     ```
 
-## And you're done!
-Go check out your site!
+## Check in!
+Go check out your site on EC2! You should see the home page.
+
+
+### Finish up - Run Migrations to your RDS instance
+Update your `.env` file on EC2 and ensure that you have the following settings correctly configured
+```dotenv
+FLASK_APP=wsgi.py
+FLASK_ENV=production
+DATABASE_URL=postgres://<USERNAME>:<PASSWORD>@<HOST>/postgres
+SECRET_KEY=1234  # Generate a secret random string of 16 or more characters
+API_URL=https://....
+```
+Migrate database using `dotenv run flask db upgrade`
+

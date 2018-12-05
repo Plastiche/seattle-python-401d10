@@ -3,7 +3,8 @@
 ## Learning Objectives
 
 - Students will develop an application that can be viewed in an online hosted environment
-- Students will understand how AWS EC2 can work to support the deployment process
+- Students will understand how AWS can work to support the deployment process
+- Students will learn three of the fundamental AWS services: IAM, EC2, and RDS 
 
 ## Outline
 
