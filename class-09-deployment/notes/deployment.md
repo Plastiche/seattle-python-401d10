@@ -3,6 +3,7 @@
 ### In your project
 
 1. Ensure your `requirements.txt` reflects any additional dependencies installed via `pipenv` for local development
+    - `pipenv run pip list > requirements.txt`
 
 ### On AWS
 _You can skip some of these steps if you already have the instances created._
@@ -207,7 +208,7 @@ sudo systemctl daemon-reload
 
 1. Install `gunicorn` with `pip3`.
     ```bash
-    $ sudo pip3 install gunicorn python-dotenv
+    $ pip3 install gunicorn python-dotenv
     ```
 
 1. Create a `gunicorn` configuration file.
@@ -253,5 +254,14 @@ DATABASE_URL=postgres://<USERNAME>:<PASSWORD>@<HOST>/postgres
 SECRET_KEY=1234  # Generate a secret random string of 16 or more characters
 API_URL=https://....
 ```
-Migrate database using `dotenv run flask db upgrade`
+
+Migrate database using `flask db upgrade` from the root of your project: `src/`
+
+
+## Making updates!
+1. Continue to develop your code locally, and ACP to GitHub.
+1. SSH into your EC2 Instance and `git pull` from your repo.
+1. Restart Gunicorn - `sudo systemctl restart gunicorn`.
+
+_Note: You may need to process other steps as you progress, such as migrations to your database._
 
