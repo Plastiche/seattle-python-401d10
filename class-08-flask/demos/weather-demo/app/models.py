@@ -3,7 +3,6 @@ from . import app
 # DB-Related Imports
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from passlib.hash import pbkdf2_sha256 as pass_hash
 
 from datetime import datetime as dt
 
