@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 11: Testing Web Apps
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review: Build a Stack via inheritance
+- Web application testing
+    - Test Coverage
+    - Continuous Integration
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will learn the fundamentals of testing an application withing the bounds of a framework
