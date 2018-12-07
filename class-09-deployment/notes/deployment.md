@@ -3,7 +3,7 @@
 ### In your project
 
 1. Ensure your `requirements.txt` reflects any additional dependencies installed via `pipenv` for local development
-    - `pipenv run pip list > requirements.txt`
+    - `pipenv run pip freeze > requirements.txt`
 
 ### On AWS
 _You can skip some of these steps if you already have the instances created._
