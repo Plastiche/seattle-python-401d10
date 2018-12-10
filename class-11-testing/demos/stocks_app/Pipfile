@@ -11,6 +11,7 @@ flask-sqlalchemy = "*"
 flask-wtf = "*"
 requests = "*"
 coverage = "*"
+pytest = "*"
 
 [dev-packages]
 
