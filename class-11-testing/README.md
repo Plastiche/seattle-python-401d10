@@ -3,6 +3,7 @@
 ## Daily Plan
 - Notes:
     - Anything top of mind?
+    - Midterms / Groups / Planning assignments
     
 - Code Review
 - Web application testing
