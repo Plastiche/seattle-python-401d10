@@ -4,7 +4,7 @@
 - Notes:
     - Anything top of mind?
     
-- Code Review: Build a Stack via inheritance
+- Code Review
 - Web application testing
     - Test Coverage
     - Continuous Integration
