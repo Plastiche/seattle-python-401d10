@@ -21,11 +21,11 @@
     </nav>
   </header>
   <main>
-    {% with messages = get_flashed_messages() %}
+
     {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
+      <div class="flash">{{ message }}</div>
     {% endfor %}
-  {% endwith %}
+
     {% block content %}
     <h3>No Content</h3>
     {% endblock content%}

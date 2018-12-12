@@ -23,14 +23,12 @@ def company_search():
 
     if form.validate_on_submit():
         res = req.get(f'https://api.iextrading.com/1.0/stock/{ form.data["symbol"] }/company')
-        flash('validated')
         try:
             session['context'] = res.text
             return redirect(url_for('.company_detail'))
         except JSONDecodeError:
             flash('The company you searched for does not exist.')
 
-    flash('The company you searched for does not exist.')
     return render_template('portfolio/search.html', form=form)
 
 
@@ -69,7 +67,7 @@ def company_detail():
 
     except JSONDecodeError:
         flash('The company you searched for does not exist.')
-        return render_template('portfolio/search.html', form=form)
+        return redirect(url_for('.company_search'))
 
 
 @app.route('/portfolio')

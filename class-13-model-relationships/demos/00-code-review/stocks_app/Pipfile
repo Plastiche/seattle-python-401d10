@@ -13,6 +13,7 @@ requests = "*"
 coverage = "*"
 pytest = "*"
 pytest-sugar = "*"
+pytest-watch = "*"
 
 [dev-packages]
 autopep8 = "*"

@@ -45,7 +45,7 @@ class TestClass:
         assert b'<input type="submit" value="Add to Portfolio">' in rv.data
 
     def test_bunk_symbol(self, app):
-        rv = app.test_client().post('/search', data = {'symbol' : ''})
+        rv = app.test_client().post('/search', data = {'symbol' : 'superunknown'}, follow_redirects=True)
         assert rv.status_code == 200
         assert b'<div class="flash">The company you searched for does not exist.</div>' in rv.data
 
@@ -57,7 +57,10 @@ class TestClass:
         assert b'<link rel="stylesheet" href="/css/normalize.css">' in rv.data
 
     def test_portfolio_route_get(self, app, db):
-        assert True
+        pass
+        # DANGER: running below code introduces a really nasty crash
+        # see if you can figure out why
+
         # rv = app.test_client().get('/portfolio')
         # assert rv.status_code == 200
         # assert b'<h2>Welcome to the Portfolio</h2>' in rv.data
