@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 13: Model Relationships
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Project group check-in
+    
+- Code Review
+- Database Relationships
+- SQLAlchemy Relationships
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will know the four basic relationships available in a Relational DBMS
