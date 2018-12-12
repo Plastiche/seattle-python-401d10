@@ -31,15 +31,15 @@ class TestClass:
         assert rv.status_code == 200
         assert b'<h2>Search for stocks</h2>' in rv.data
 
-    def test_search_post_pre_redirect(self, app, db):
+    def test_search_post_pre_redirect(self, app, session):
         rv = app.test_client().post('/search', data = {'symbol' : 'amzn'})
         assert rv.status_code == 302
 
-    def test_search_post_with_repeat(self, app, db):
+    def test_search_post_with_repeat(self, app, session):
         rv = app.test_client().post('/search', data = {'symbol' : 'amzn'})
         assert rv.status_code == 302
 
-    def test_search_post(self, app, db):
+    def test_search_post(self, app, session):
         rv = app.test_client().post('/search', data = {'symbol' : 'amzn'}, follow_redirects = True)
         assert rv.status_code == 200
         assert b'<input type="submit" value="Add to Portfolio">' in rv.data
@@ -56,11 +56,7 @@ class TestClass:
         assert b'<a href="/portfolio"' in rv.data
         assert b'<link rel="stylesheet" href="/css/normalize.css">' in rv.data
 
-    def test_portfolio_route_get(self, app, db):
-        pass
-        # DANGER: running below code introduces a really nasty crash
-        # see if you can figure out why
-
-        # rv = app.test_client().get('/portfolio')
-        # assert rv.status_code == 200
-        # assert b'<h2>Welcome to the Portfolio</h2>' in rv.data
+    def test_portfolio_route_get(self, app, session):
+        rv = app.test_client().get('/portfolio')
+        assert rv.status_code == 200
+        assert b'<h2>Welcome to the Portfolio</h2>' in rv.data

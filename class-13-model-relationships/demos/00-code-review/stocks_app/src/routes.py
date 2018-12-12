@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, flash, session
 from .forms import CompanySearchForm, CompanyAddForm
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import IntegrityError, SQLAlchemyError, DBAPIError
 from json import JSONDecodeError
 from .models import db, Company
 import requests as req
@@ -76,3 +76,4 @@ def portfolio_detail():
     """
     companies = Company.query.all()
     return render_template('portfolio/portfolio.html', companies=companies)
+
