@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <p>testing</p>
+  {% if not get_portfolios() %}
+    <h3>You currently do not have any portfolios</h3>
+    <p><a href="/portfolio">Please add one or more!</a></p>
+  {% else %}
+    <h2>Search for stocks</h2>
+    <form method="POST" action="/search">
+      {{ form.hidden_tag() }}
+      {{ form.symbol.label }} {{ form.symbol(size=20) }}
+      <input type="submit" value="Go">
+    </form>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <p>Create a new portfolio</p>
+  <form action="/portfolio" method="POST">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    <input type="submit" value="Create Portfolio">
+  </form>
+</div>
+<hr>
+<div class="container">
+  <h4>Portfolios</h4>
+  {% for portfolio in get_portfolios() %}
+    <p>portfolio name: {{portfolio.name}}</p>
+    {% for company in companies %}
+      {% if company.portfolio_id == portfolio.id %}
+        <div class="three columns company_info" id="{{ company.symbol }}">
+          <p><span class="company_labels">Portfolio</span>: {{ portfolio.name | title }}</p>
+          <p><span class="company_labels">Symbol</span>: {{ company.symbol | upper }}</p>
+          <p><span class="company_labels">Company Name</span>: {{ company.companyName | title }}</p>
+          <p><span class="company_labels">Exchange</span>: {{ company.exchange | title }}</p>
+          <p><span class="company_labels">Industry</span>: {{ company.industry | title }}</p>
+          <p><span class="company_labels">Website</span>: <a href={{ company.website }}>{{ company.website }}</a></p>
+          <p><span class="company_labels">Description</span>: {{ company.description | title }}</p>
+          <p><span class="company_labels">CEO</span>: {{ company.CEO | title }}</p>
+          <p><span class="company_labels">Issue Type</span>: {{ company.issueType | upper }}</p>
+          <p><span class="company_labels">Sector</span>: {{ company.sector | title }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+{% endblock %}
