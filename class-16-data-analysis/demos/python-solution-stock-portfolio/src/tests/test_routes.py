@@ -29,7 +29,7 @@ class TestFixtures:
         # need to first post from search page in order to add company stock symbol to session
         authenticated_client.post('/search', data={'symbol': 'goog'}, follow_redirects=True)
 
-        # simulate form input
+        # simulate form input DANGER: make sure form keys match or else validation will fail!
         form_data = {'symbol': 'goog', 'companyName': 'Alphabet Inc.', 'portfolios': portfolio.id}
 
         # post the form data but do not follow redirects
