@@ -1,5 +1,14 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 16: Data Analysis
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review - Testing
+- Data Science Intro
+    - Jupyter, Numpy, Pandas
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will learn the fundamental process of data analysis
