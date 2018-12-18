@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 17: Regressions
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review
+- Introduction to machine learning
+- Regressions
+- Decision Trees
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will have a basic understanding of regression analysis and some of the more commonly used regressions in predictive analysis
