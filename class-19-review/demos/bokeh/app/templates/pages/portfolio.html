@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Portfolio{% endblock %}
+{% block h1 %}Your Portfolio{% endblock %}
+
+{% block content %}
+{% if portfolio == True %}
+  <h2>Your companies:</h2>
+  {% if all_companies|length > 0 %}
+    <table>
+      <thead>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Portfolio</th>
+        <th>Data</th>
+        <th>Delete</th>
+      </thead>
+      {% for company in all_companies %}
+        <tr>
+          <td>{{ company.symbol }}</td>
+          <td>{{ company.companyName }}</td>
+          <td>{{ company.description[:200] }}...</td>
+          <td>{{ portfolios[company.portfolio_id] }}</td>
+          <td><a href="{{ url_for('.stock_data', company=company.symbol) }}" target="_blank">data (new tab)</a></td>
+          <td>
+            <form action="/delete-company" method="POST">
+              {{ delete_form.csrf_token }}
+              {{ delete_form.company_id(value=company.id) }}
+              {{ delete_form.portfolio_id(value=company.portfolio_id) }}
+              <input type="submit" value="del">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No companies found!</p>
+  {% endif %}
+{% endif %}
+<h2>Make a new portfolio</h2>
+<p>Please fill out the following to make a new portfolio.</p>
+<form action="/portfolio" method="POST">
+  {{ form.csrf_token }}
+  {{ form.name.label }} {{ form.name(size=20) }}
+  <input type="submit" value="Create Portfolio">
+</form>
+{% endblock %}

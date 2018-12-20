@@ -1,0 +1,27 @@
+.flashed_message {
+    border: 3px dashed black;
+    margin: 1em auto;
+    max-width: 600px;
+    padding: 1em;
+    text-align: center;
+}
+
+table {
+    margin: 1em auto;
+}
+
+table, th, td {
+    border: 1px solid rgba(0, 0, 0, 0.8)
+}
+
+th {
+    background: rgba(141, 141, 247, 0.5)
+}
+
+th, td {
+    padding: .5em;
+}
+
+.chart-holder {
+    padding: 20px;
+}

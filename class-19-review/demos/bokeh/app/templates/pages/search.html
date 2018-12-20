@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock %}
+{% block h1 %}Search{% endblock %}
+
+{% block content %}
+<p>Please enter the symbol for the company you would like to search for and click "search".</p>
+<p>If you are not familiar with symbols, try <a href="https://www.nasdaq.com/symbol/" target="_blank">searching NASDAQ</a>.</p>
+<form action='/search' method='POST'>
+  {{ form.csrf_token }}
+  {{ form.company.label }} {{ form.company(size=20) }}
+  <input type="submit" value="Search!">
+</form>
+{% endblock %}

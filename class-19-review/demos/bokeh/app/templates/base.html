@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Portfolio - {% block title %}{% endblock %}</title>
+  {% include 'head.html' %}
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Stock Portfolio - {% block h1 %}{% endblock %}</h1>
+      {% include 'nav.html' %}
+    </div>
+  </header>
+  <main class="container">
+    {% for message in get_flashed_messages() %}
+      <div class="flashed_message"><p>{{ message }}</p></div>
+    {% endfor %}
+
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

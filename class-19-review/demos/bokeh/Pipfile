@@ -1,0 +1,29 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pep8 = "*"
+pylint = "*"
+flake8 = "*"
+
+[packages]
+flask = "*"
+pytest = "*"
+flask-wtf = "*"
+requests = "*"
+flask-migrate = "*"
+flask-sqlalchemy = "*"
+psycopg2-binary = "*"
+coverage = "*"
+psycopg2 = "*"
+passlib = "*"
+pandas = "*"
+numpy = "*"
+scipy = "*"
+matplotlib = "*"
+bokeh = "*"
+
+[requires]
+python_version = "3.6"

@@ -1,0 +1,4 @@
+[run]
+source = stock_portfolio
+omit = tests/*
+

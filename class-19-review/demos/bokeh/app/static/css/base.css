@@ -1,0 +1,49 @@
+body {
+    background-color: whitesmoke;
+}
+
+body,
+input {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* headings and nav */
+
+header {
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2em;
+    padding: .5em;
+}
+
+nav,
+h1 {
+    text-align: center;
+}
+
+nav {
+    padding: 1em;
+}
+
+nav li {
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+/* other text */
+
+main p {
+    margin-bottom: .5em;
+    line-height: 1.2;
+}
