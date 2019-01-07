@@ -1,5 +1,16 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 26: Docker & Django
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - What's coming up...
+    
+- Containerization  
+    - Docker
+    - Docker-Compose
+- Django
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will learn the basics of working with Docker containers
@@ -11,11 +22,9 @@
 - CodeReview
 - [Docker]
 - [Django]
-- [Testing in Django]
 <!-- [Hyperlinks]-->
 
 <!-- links -->
 [Docker]: https://docs.docker.com/compose/django/
 [Django]: ./notes/getting-started.md
-[Testing in Django]: ../class-27-django-mvc/notes/testing.md
 
