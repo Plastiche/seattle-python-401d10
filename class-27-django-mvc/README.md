@@ -1,5 +1,15 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 27: Django MVC
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    - Back to our normal lecture routine tomorrow...
+    
+- Docker/Compose Check-in
+- MTV(MVC) in Django
+- Testing a Django application
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will learn the fundamentals of building a Django application using the MVC architecture
