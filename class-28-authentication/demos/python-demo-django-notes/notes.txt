@@ -1,0 +1,81 @@
+############################################################
+# notes_project/settings.py
+############################################################
+
+# Django Registration Settings
+ACCOUNT_ACTIVATION_DAYS = 1
+LOGIN_REDIRECT_URL = '/'
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+Add to INSTALLED_APPS
+'django_registration',
+
+
+
+############################################################
+# notes_project/views.py
+# notes_app/views.py
+############################################################
+from django.contrib.auth.decorators import login_required
+@login_required
+
+############################################################
+# notes_project/urls.py
+############################################################
+path('accounts/', include('django_registration.backends.activation.urls')),
+path('accounts/', include('django.contrib.auth.urls')),
+
+
+############################################################
+# notes_app/tests.py
+############################################################
+from django.contrib.auth.models import User
+user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+Note.objects.create(title='title one', detail='detail one',user=user)
+Note.objects.create(title='title two', detail='detail two',user=user)
+Note.objects.create(title='title three', detail='detail three',user=user)
+
+############################################################
+# notes_project/templates/generic/base.html
+############################################################
+<li><a href="{% url "django_registration_register" %}">Signup</a></li>
+
+############################################################
+# notes_project/templates/registration/logged_out.html
+############################################################
+{% extends 'generic/base.html' %}
+
+{% block content %}
+<h2>You are logged out. Congrats.</h2>
+{% endblock %}
+
+
+
+############################################################
+# notes_project/templates/registration/login.html
+############################################################
+{% extends 'generic/base.html' %}
+
+{% block content %}
+<div class="login-form container">
+  <form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+{% endblock %}
+
+
+############################################################
+# django-registration templates
+############################################################
+https://github.com/codefellows/python-demo-django-notes/tree/class28/notes_project/templates/django_registration
+
+
+# bash in to container and run below when --noinput problems
+./manage.py makemigrations
+docker exec -it container_name_here psql -U postgres
