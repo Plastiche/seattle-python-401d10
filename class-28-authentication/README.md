@@ -1,5 +1,14 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 28: Authentication
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+    
+- Code Review
+- Django Authentication
+- Django Registration
+- Lab Preview
+
 ## Learning Objectives
 
 - Students will deepen their understanding of Django's built-in authentication models
