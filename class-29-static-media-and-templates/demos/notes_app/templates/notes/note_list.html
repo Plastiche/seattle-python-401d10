@@ -1,0 +1,15 @@
+{% extends "generic/base.html" %}
+
+{% block title %}List{% endblock %}
+
+{% block content %}
+<div class="note_list">
+<p>You have {{ notes|length }} notes on record</p>
+
+{% for note in notes %}
+  {% if note.status == 'incomplete' %}
+    <h3><a href="{% url "note_detail" pk=note.id %}">{{ note.title }} ({{ note.status }})</a></h3>
+  {% endif %}
+{% endfor %}
+</div>
+{% endblock content %}
