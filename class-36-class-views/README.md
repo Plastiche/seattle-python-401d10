@@ -1,5 +1,14 @@
 # ![cf](http://i.imgur.com/7v5ASc8.png) Class 36: Class-based Views
 
+## Daily Plan
+- Notes:
+    - Anything top of mind?
+- Code Review
+- Mix-ins & Multiple Inheritance
+- Class-based Views in Django
+- Lab Preview
+
+
 ## Learning Objectives
 
 - Students will learn the fundamental differences between function views and class views in Django
