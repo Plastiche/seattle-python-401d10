@@ -8,10 +8,12 @@
 
 If you get back a permissions error when attempting to log in to API then add below to your settings.py
 
-```CORS_ORIGIN_ALLOW_ALL = True
+```
+CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = tuple(
 #     os.environ.get(
 #         'CORS_ORIGIN_WHITELIST',
 #         'localhost',
 #     ).split()
-# )```
+# )
+```
