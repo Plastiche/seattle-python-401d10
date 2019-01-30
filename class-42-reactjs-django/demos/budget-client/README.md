@@ -1,6 +1,6 @@
 ## Lab Instructions
 
-- in project director run `npm install` then `npm start`
+- in project directory run `npm install` then `npm start`
 - Search through the code looking for `LAB TASK:` to see the one task for today's lab.
 - Ask for help ;)
 
